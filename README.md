@@ -1,6 +1,7 @@
-##Конструктор карты яндекс
+## Конструктор карты яндекс
 
 ```html
+<script src="yandex_map.js"></script>
 <section>
   <div class="map" id="map" ontouchmove="event.stopPropagation();"></div>
 
@@ -80,7 +81,7 @@
       }
   </script>
 
-  <select class="form-control" style="position: absolute; width: 200px; max-width: 100%; top: 115px; right: 10px; " onchange="selectMap(this);">
+  <select onchange="selectMap(this);" class="form-control" style="position: absolute; width: 200px; max-width: 100%; top: 115px; right: 10px; " >
       <option value="view">Просмотр всех точек</option>
       <option value="editRoute">Добавить маршрут</option>
       <option value="editPolyline">Добавить ломанную линию</option>
