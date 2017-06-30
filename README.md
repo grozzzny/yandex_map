@@ -14,6 +14,7 @@
 
 ```html
 <script src="jquery-3.2.1.js"></script>
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 <script src="yandex_map.js"></script>
 <section>
   <div class="map" id="map" ontouchmove="event.stopPropagation();"></div>
