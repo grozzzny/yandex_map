@@ -1,4 +1,4 @@
-## Конструктор карты яндекс. Jquery
+# Конструктор карты яндекс. Jquery
 
 ### Отображение объектов 
 ![alt text](https://raw.githubusercontent.com/grozzzny/yandex_map/master/2017-06-30_12-28-23.png)
@@ -15,6 +15,7 @@
 ### Редактор маршрута с calback функцией
 ![alt text](https://raw.githubusercontent.com/grozzzny/yandex_map/master/2017-06-30_12-30-42.png)
 
+## Пример кода
 
 ```html
 <script src="jquery-3.2.1.js"></script>
