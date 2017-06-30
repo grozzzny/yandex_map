@@ -1,15 +1,19 @@
 ## Конструктор карты яндекс. Jquery
 
 ### Отображение объектов 
+![alt text](https://raw.githubusercontent.com/grozzzny/yandex_map/master/2017-06-30_12-28-23.png)
 
 ### Редактор ломанной с calback функцией
+![alt text](https://raw.githubusercontent.com/grozzzny/yandex_map/master/2017-06-30_12-29-48.png)
 
 ### Редактор одной точки с calback функцией
+![alt text](https://raw.githubusercontent.com/grozzzny/yandex_map/master/2017-06-30_12-31-29.png)
 
 ### Редактор полигона с calback функцией
+![alt text](https://raw.githubusercontent.com/grozzzny/yandex_map/master/2017-06-30_12-31-09.png)
 
 ### Редактор маршрута с calback функцией
-
+![alt text](https://raw.githubusercontent.com/grozzzny/yandex_map/master/2017-06-30_12-30-42.png)
 
 
 ```html
