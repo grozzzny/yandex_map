@@ -1,6 +1,19 @@
-## Конструктор карты яндекс
+## Конструктор карты яндекс. Jquery
+
+### Отображение объектов 
+
+### Редактор ломанной с calback функцией
+
+### Редактор одной точки с calback функцией
+
+### Редактор полигона с calback функцией
+
+### Редактор маршрута с calback функцией
+
+
 
 ```html
+<script src="jquery-3.2.1.js"></script>
 <script src="yandex_map.js"></script>
 <section>
   <div class="map" id="map" ontouchmove="event.stopPropagation();"></div>
