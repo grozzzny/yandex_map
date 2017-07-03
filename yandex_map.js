@@ -266,13 +266,15 @@ function Map() {
                     iconLayout: 'default#image',
                     iconImageHref: ob.src,
                     iconImageSize: [sizeIco, sizeIco],
-                    iconImageOffset: [-sizeIco/2, -sizeIco]
+                    iconImageOffset: [-sizeIco/2, -sizeIco],
+                    hash: ob.hash
                 };
 
                 var optionPlacemarkIcoDefault = {
                     //blue | darkGreen | red | violet | darkOrange | black | night | brown
                     //yellow | darkBlue | green | pink | orange | gray | lightBlue | olive
-                    preset: 'islands#' + ob.icoColor + 'CircleDotIconWithCaption'
+                    preset: 'islands#' + ob.icoColor + 'CircleDotIconWithCaption',
+                    hash: ob.hash
                 };
 
                 //Если нет иконки, то включить дефолтную иконку
@@ -299,7 +301,8 @@ function Map() {
                     fillColor: ob.fillColor,
                     strokeColor: ob.strokeColor,
                     fillOpacity: ob.fillOpacity,
-                    strokeWidth: ob.strokeWidth
+                    strokeWidth: ob.strokeWidth,
+                    hash: ob.hash
                 });
 
                 t.map.geoObjects.add(polygon);
@@ -316,7 +319,8 @@ function Map() {
                 }, {
                     strokeColor: ob.strokeColor,
                     strokeWidth: ob.strokeWidth,
-                    strokeOpacity: 1
+                    strokeOpacity: 1,
+                    hash: ob.hash
                 });
 
                 t.map.geoObjects.add(polyline);
@@ -357,7 +361,8 @@ function Map() {
 
                     // Внешний вид линии пешеходного маршрута.
                     routeActivePedestrianSegmentStrokeStyle: "solid",
-                    routeActivePedestrianSegmentStrokeColor: ob.strokeColor
+                    routeActivePedestrianSegmentStrokeColor: ob.strokeColor,
+                    hash: ob.hash
                 });
 
                 /**
@@ -420,6 +425,37 @@ function Map() {
             //Нанесение объектов геолокаций на карту
             t.view.addGeoObjects();
 
+            t.view.hashDetected();
+        },
+
+        hashDetected: function () {
+            $(window).on('hashchange', function (e) {
+                t.view.show();
+                e.preventDefault();
+            });
+            if(window.location.hash != '') t.view.show();
+        },
+
+        show: function () {
+            t.map.geoObjects.each(function (el, i) {
+                if (el.options._name != 'multiRoute') el.balloon.close();
+
+                if('#' + el.options.get('hash') == window.location.hash){
+                    if (el.options._name != 'multiRoute'){
+                        t.map.setBounds(el.geometry.getBounds(), {checkZoomRange: true});
+                        el.balloon.open();
+                    } else {
+                        if(el.getBounds() == null){
+                            el.events.once("boundschange", function () {
+                                t.map.setBounds(el.getBounds(), {checkZoomRange: true});
+                            });
+                        } else{
+                            t.map.setBounds(el.getBounds(), {checkZoomRange: true});
+                        }
+                    }
+                    return true;
+                }
+            });
         }
     };
 
