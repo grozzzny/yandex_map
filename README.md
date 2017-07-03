@@ -15,6 +15,9 @@
 ### Редактор маршрута с calback функцией
 ![alt text](https://raw.githubusercontent.com/grozzzny/yandex_map/master/2017-06-30_12-30-42.png)
 
+### Отцентровка карты по хешу
+http://mysite.ru/#event_1
+
 ## Пример кода
 
 ```html
@@ -27,6 +30,7 @@
   <script>
       var dataGeoObjects = [
           {
+              hash: 'event_1',
               type: 'placemark',
               coords: [54.718504, 20.509194],
               //src: null,
@@ -37,6 +41,7 @@
               content: 'Контент новой метки HTML'
           },
           {
+              hash: 'event_2',
               type: 'polygon',
               coords: [
                   [54.719444, 20.505435],
@@ -52,6 +57,7 @@
               fillOpacity: '0.1'
           },
           {
+              hash: 'event_3',
               type: 'polyline',
               coords: [
                   [54.716407, 20.509812],
@@ -65,6 +71,7 @@
               strokeColor: '#002eb8'
           },
           {
+              hash: 'event_4',
               type: 'route',
               mode: 'auto', //masstransit | pedestrian | auto
               coords: [
